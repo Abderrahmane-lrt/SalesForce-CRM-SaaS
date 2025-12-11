@@ -7,7 +7,6 @@ import { SignIn, SignUp } from '@clerk/clerk-react'
 function App() {
   return (
     <div className="w-full px-4 md:px-8 lg:px-13 xl:px-28 ">
-      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

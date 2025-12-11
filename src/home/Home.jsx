@@ -9,6 +9,7 @@ import calendarIcon from "../assets/icons/calendar.png";
 import assignIcon from "../assets/icons/assign.png";
 import contactsIcon from "../assets/icons/contacts.png";
 import previewImage from '../assets/preview.png'
+import Navbar from "../components/NavBar";
 
 const HomePage = () => {
   const services = [
@@ -52,6 +53,8 @@ const HomePage = () => {
 
   return (
     <div className="">
+      { /* Navbar  */}
+      <Navbar />
       {/* Hero */}
       <section className="flex justify-between pt-10">
         <div className="pt-20">
@@ -157,11 +160,15 @@ const HomePage = () => {
         </div>
       </section>
       {/* Preview Section */}
-      <section className="h-132 bg-orange-500 rounded-4xl  ">
+      <section className=" bg-orange-500 rounded-4xl  ">
         <h2 className=" text-2xl text-white font-extrabold text-center pt-30 pb-5">Easy and convenient</h2>
         <img src={previewImage} alt="preview image"  />
       </section>
-      {/*  */}
+      {/* Pricing Plan  */}
+      <section className="">
+        <h2 className="text-center text-3xl font-bold">Our Pricing Plans</h2>
+          
+      </section>
     </div>
   );
 };
