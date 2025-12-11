@@ -7,7 +7,6 @@ import Pipline from "./pipline/pipline"
 
 function App() {
   return (
-    <div className="w-full px-4 md:px-8 lg:px-13 xl:px-28 ">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -33,7 +32,6 @@ function App() {
         <Route path="/pipline" element={<Pipline />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-    </div>
   )
 }
 
