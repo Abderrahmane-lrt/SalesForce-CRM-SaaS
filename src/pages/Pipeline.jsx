@@ -24,7 +24,7 @@ function Draggable({ oppo }) {
       className="draggable border border-slate-200"
     >
       <span className="titleAndprice">
-        <h2>{oppo.entreprise}</h2>
+        <h2 className="capitalize font-semibold">{oppo.entreprise}</h2>
         <b className="montant">
           <i>{oppo.montant} DH</i>
         </b>

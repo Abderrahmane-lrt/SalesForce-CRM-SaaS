@@ -1,16 +1,12 @@
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { useNavigate } from "react-router-dom";
 dayjs.extend(relativeTime);
 
 const Opportunities = () => {
-<<<<<<< HEAD
   const navigate = useNavigate()
-=======
-  const navigate = useNavigate();
->>>>>>> aff0d4805f0917b675328c6ff897ed484fc36837
   const colorByStage = {
     prospection: "#3b82f6",
     qualification: "#eab308",
@@ -20,6 +16,7 @@ const Opportunities = () => {
     perdu: "#ef4444",
   };
   const opportunities = useSelector((state) => state.opportunities);
+  const dispatch = useDispatch();
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
@@ -27,15 +24,15 @@ const Opportunities = () => {
           <h1 className="text-3xl font-extrabold text-gray-800">
             💼 Opportunities
           </h1>
-          <button onClick={()=>navigate('/addOpportunity')} className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+          <button onClick={()=>navigate('/addOpportunity')} className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
             + New Opportunity
           </button>
         </div>
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full ">
               <thead>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-gray-200 ">
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
                     Company
                   </th>
@@ -84,10 +81,20 @@ const Opportunities = () => {
                       onClick={()=> navigate(`/opportunities/${item.id}`)}>
                         visibility
                       </span>
-                      <span class="material-symbols-outlined text-green-700 scale-90 cursor-pointer">
+                      
+                      <span class="material-symbols-outlined text-green-700 scale-90 cursor-pointer"
+                        onClick={() => navigate(`/editOpportunity/${item.id}`)}
+                      >
                         edit
                       </span>
-                      <span class="material-symbols-outlined text-red-700 scale-90 cursor-pointer">
+                      {/* herre make onclick on this span */}
+                      <span class="material-symbols-outlined text-red-700 scale-90 cursor-pointer"
+                        onClick={() => {
+                          if (window.confirm(`Delete opportunity "${item.entreprise}"?`)) {
+                            dispatch({ type: 'opportinities/deleteOpprtinity', payload: item.id });
+                          }
+                        }}
+                      >
                         delete
                       </span>
                     </td>

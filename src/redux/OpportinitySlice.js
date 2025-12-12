@@ -52,16 +52,45 @@ const OportinitySlice = createSlice({
     initialState: opportunities,
     reducers: {
         addOportinity: (state, action) => {
-            state.push(action.payload);
+            const { probability, endDate, Source, ...rest } = action.payload;
+            const newOpp = {
+                ...rest,
+                id: state.length + 1,
+                probabilite: probability || "",
+                date: endDate ? new Date(endDate) : new Date(),
+                source: Source || "",
+            };
+            state.push(newOpp);
             localStorage.setItem('opportunities', JSON.stringify(state));
         },
-        deleteOpprtinity: () => {
-            
+        deleteOpprtinity: (state, action) => {
+            const idToRemove = action.payload;
+            const index = state.findIndex((op) => op.id === Number(idToRemove));
+            if (index !== -1) {
+                state.splice(index, 1);
+                localStorage.setItem('opportunities', JSON.stringify(state));
+            }
         },
         changeStatus: (state, action) => {
             return state.map((oppo) =>
                 oppo.entreprise == action.payload.oppId ? { ...oppo, status: action.payload.newStatus } : oppo
                 )
+        },
+        editOpprtinity: (state, action) => {
+            const { id, probability, endDate, Source, ...rest } = action.payload;
+            const newState = state.map((op) =>
+                op.id === Number(id)
+                    ? {
+                          ...op,
+                          ...rest,
+                          probabilite: probability ?? op.probabilite,
+                          date: endDate ? new Date(endDate) : op.date,
+                          source: Source ?? op.source,
+                      }
+                    : op
+            );
+            localStorage.setItem('opportunities', JSON.stringify(newState));
+            return newState;
         },
 
     }
@@ -69,4 +98,4 @@ const OportinitySlice = createSlice({
 
 
 export default OportinitySlice.reducer
-export const { addOportinity, deleteOpprtinity, changeStatus } = OportinitySlice.actions
+export const { addOportinity, deleteOpprtinity,editOpprtinity, changeStatus } = OportinitySlice.actions

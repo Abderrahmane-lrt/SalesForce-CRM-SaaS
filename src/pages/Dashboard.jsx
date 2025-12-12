@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
+
 const Dashboard = () => {
+  const opportunities = useSelector(state => state.opportunities)
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
@@ -10,19 +13,19 @@ const Dashboard = () => {
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
               Total Opportunities
             </h3>
-            <p className="text-3xl font-bold text-orange-500">20</p>
+            <p className="text-3xl font-bold text-orange-500">{opportunities.length}</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
               Active Deals
             </h3>
-            <p className="text-3xl font-bold text-green-500">3</p>
+            <p className="text-3xl font-bold text-green-500">2</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
               Revenue
             </h3>
-            <p className="text-3xl font-bold text-blue-500">5000 DH</p>
+            <p className="text-3xl font-bold text-blue-500">50000 MAD</p>
           </div>
         </div>
         <div className="mt-8 bg-white rounded-lg shadow-md p-6">
