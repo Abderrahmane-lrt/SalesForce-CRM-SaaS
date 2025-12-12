@@ -1,9 +1,11 @@
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import "../assets/css/pipline.css";
-import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { changeStatus } from "../redux/OpportinitySlice";
+
 dayjs.extend(relativeTime);
 
 function Draggable({ oppo }) {
@@ -11,7 +13,7 @@ function Draggable({ oppo }) {
     id: oppo.entreprise,
   });
   const dragStyle = {
-    cursor: 'move',
+    cursor: "move",
     transform: transform && `translate(${transform.x}px, ${transform.y}px)`,
   };
   return (
@@ -172,52 +174,15 @@ export default function Pipeline() {
     "gagne",
     "perdu",
   ];
+  const opportinities = useSelector((opportinities) => opportinities);
+  const dispatch = useDispatch()
 
-  const [opportinitis, setOpportinitis] = useState([
-    {
-      entreprise: "dacia",
-      status: "prospection",
-      telephone: "0523434343",
-      email: "test@gmail.com",
-      montant: 10000,
-      probabilite: "",
-      date: new Date(),
-      source: "",
-      commerciale: "",
-    },
-    {
-      entreprise: "google",
-      status: "qualification",
-      telephone: "0523434343",
-      email: "test@gmail.com",
-      montant: 20000,
-      probabilite: "",
-      date: new Date(),
-      source: "",
-      commerciale: "",
-    },
-    {
-      entreprise: "ideal",
-      status: "proposition",
-      telephone: "0523434343",
-      email: "test@gmail.com",
-      montant: 30000,
-      probabilite: "",
-      date: new Date(),
-      source: "",
-      commerciale: "",
-    },
-  ]);
   const handleDragEnd = (event) => {
     const { over, active } = event;
     const oppId = active.id;
     const newStatus = over.id;
     if (over) {
-      setOpportinitis(() =>
-        opportinitis.map((oppo) =>
-          oppo.entreprise == oppId ? { ...oppo, status: newStatus } : oppo
-        )
-      );
+      dispatch(changeStatus({oppId, newStatus}))
     } else return;
   };
 
@@ -234,7 +199,7 @@ export default function Pipeline() {
           {etape.map((op) => (
             <Column
               key={op}
-              opportinities={opportinitis.filter((e) => e.status == op)}
+              opportinities={opportinities}
               etape={op}
             />
           ))}

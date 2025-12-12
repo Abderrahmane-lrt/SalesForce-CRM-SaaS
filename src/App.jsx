@@ -8,32 +8,40 @@ import Opportunities from "./pages/Opportunities";
 import Pipeline from "./pages/Pipeline";
 import NotFound from "./not-found";
 import { Atom, BlinkBlur } from "react-loading-indicators";
+import OpportunitiesSelector from "./opportinities";
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+    useEffect(() => {
+  if (location.pathname === "/" || location.pathname === '/dashboard') {
+      setLoading(true);
 
-  useEffect(() => {
-    setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 1000);
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
+      return () => clearTimeout(timer);
+  }
+    }, [location.pathname]);
 
   return (
     <>
       {/* Loading */}
       {loading && (
         <div className="fullpage-loader">
-          <BlinkBlur color={['#ff6100']} size="medium" text="Please wait..." textColor="#000000" />
+          <BlinkBlur
+            color={["#ff6100"]}
+            size="medium"
+            text="Please wait..."
+            textColor="#000000"
+          />
         </div>
       )}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/test" element={<OpportunitiesSelector />} />
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/pipeline" element={<Pipeline />} />
