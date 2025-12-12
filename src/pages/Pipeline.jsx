@@ -27,12 +27,11 @@ function Draggable({ oppo }) {
       <span className="titleAndprice">
         <h2>{oppo.entreprise}</h2>
         <b className="montant">
-          <i>{oppo.montant?.toLocaleString?.() ?? oppo.montant} DH</i>
+          <i>{oppo.montant} DH</i>
         </b>
       </span>
       <div className="meta">
-        <span className="prob">{oppo.probabilite || "—"}</span>
-        <span className="commerciale">{oppo.commerciale || "—"}</span>
+        <span className="prob">{oppo.probabilite || "—"}%</span>
       </div>
       <div className="date">
         <p>
