@@ -1,13 +1,13 @@
 import React from 'react';
 
-const stageColor = {
-  prospection: "#3b82f6",
-  qualification: "#eab308",
-  proposition: "#f97316",
-  negotiation: "#10b981",
-  gagne: "#22c55e",
-  perdu: "#ef4444",
-};
+// const stageColor = {
+//   prospection: "#3b82f6",
+//   qualification: "#eab308",
+//   proposition: "#f97316",
+//   negotiation: "#10b981",
+//   gagne: "#22c55e",
+//   perdu: "#ef4444",
+// };
 
 // function StageBadge({ stage }) {
 //   const color = stageColor[stage] || "#6b7280";
