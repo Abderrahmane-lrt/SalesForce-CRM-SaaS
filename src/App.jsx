@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import HomePage from "./home/home";
+import HomePage from "./home/Home";
 import DashboardLayout from "./publicLayout/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import Opportunities from "./pages/Opportunities";
