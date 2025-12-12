@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Opportunities from "../pages/Opportunities";
 
 
-const opportunities = [
+const data = [
     {
         entreprise: "dacia",
         status: "prospection",
@@ -36,24 +35,29 @@ const opportunities = [
         source: "",
         commerciale: "",
     },
-
 ]
+const opportunities = localStorage.getItem('opportunities') ? JSON.parse(localStorage.getItem('opportunities')) : data;
+
+
+
+
 const OportinitySlice = createSlice({
     name: 'opportinities',
     initialState: opportunities,
     reducers: {
         addOportinity: (state, action) => {
-            return { ...state, ...action.payload }
+            state.push(action.payload);
+            localStorage.setItem('opportunities', JSON.stringify(state));
         },
         deleteOpprtinity: () => {
             
         },
         changeStatus: (state, action) => {
             return state.map((oppo) =>
-                    oppo.entreprise == action.payload.oppId ? { ...oppo, status: action.payload.newStatus } : oppo
+                oppo.entreprise == action.payload.oppId ? { ...oppo, status: action.payload.newStatus } : oppo
                 )
-            
         },
+
     }
 })
 

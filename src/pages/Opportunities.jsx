@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { useNavigate } from "react-router-dom";
 dayjs.extend(relativeTime);
 
 const Opportunities = () => {
+  const navigate = useNavigate();
   const colorByStage = {
     prospection: "#3b82f6",
     qualification: "#eab308",
@@ -20,7 +22,7 @@ const Opportunities = () => {
           <h1 className="text-3xl font-extrabold text-gray-800">
             💼 Opportunities
           </h1>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+          <button onClick={()=>navigate('/addOpportunity')} className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
             + New Opportunity
           </button>
         </div>
