@@ -7,15 +7,16 @@ import Dashboard from "./pages/Dashboard";
 import Opportunities from "./pages/Opportunities";
 import Pipeline from "./pages/Pipeline";
 import NotFound from "./not-found";
-import { Atom, BlinkBlur } from "react-loading-indicators";
+import { BlinkBlur } from "react-loading-indicators";
 import OpportunitiesSelector from "./opportinities";
 import AddOpportunity from "./pages/addopportunity";
+
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-    useEffect(() => {
-  if (location.pathname === "/" || location.pathname === '/dashboard') {
+  useEffect(() => {
+    if (location.pathname === "/" || location.pathname === "/dashboard") {
       setLoading(true);
 
       const timer = setTimeout(() => {
@@ -23,8 +24,8 @@ function App() {
       }, 1000);
 
       return () => clearTimeout(timer);
-  }
-    }, [location.pathname]);
+    }
+  }, [location.pathname]);
 
   return (
     <>
