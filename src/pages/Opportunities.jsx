@@ -62,7 +62,7 @@ const Opportunities = () => {
                 )}
                 {opportunities.map((item, index) => (
                   <tr key={index} className="border-b-2 border-gray-100">
-                    <td className="text-left py-3 px-4 text-gray-700">
+                    <td className="text-left py-3 px-4 text-gray-700 capitalize font-semibold">
                       {item.entreprise}
                     </td>
                     <td className="text-left py-3 px-4 text-gray-700">

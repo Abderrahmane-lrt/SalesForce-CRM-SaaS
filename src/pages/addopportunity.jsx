@@ -85,6 +85,19 @@ export default function AddOpportunity() {
             />
           </div>
           <div className="flex flex-col m-1">
+            <label htmlFor="contact" className="form-label">
+              contact:
+            </label>
+            <input
+              type="text"
+              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
+              placeholder="contact"
+              name="contact"
+              id="contact"
+              required
+            />
+          </div>
+          <div className="flex flex-col m-1">
             <label htmlFor="montant" className="form-label">
               montant:
             </label>

@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 const Sidebar = () => {
   const navigate = useNavigate();
   return (
-    <aside className="w-64 bg-gray-900 text-white p-6 flex flex-col gap-6 min-h-screen pt-10">
+    <aside className="w-64 bg-black text-white p-6 flex flex-col gap-6 min-h-screen pt-10">
       <img
         src={logo}
         alt=""

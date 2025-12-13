@@ -45,8 +45,7 @@ function App() {
 
       {/* Toaste Notifications */}
       <div className="absolute">
-
-      <Toaster richColors position="top-right" />
+        <Toaster richColors position="top-right" />
       </div>
 
       {/* Routes */}
