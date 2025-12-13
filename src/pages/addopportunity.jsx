@@ -32,27 +32,26 @@ export default function AddOpportunity() {
         <h1 className="text-3xl font-bold text-gray-800 mb-8">
           Add Opportunity
         </h1>
-        <form className="flex flex-wrap gap-3 my-3" onSubmit={handleSubmit}>
+        <form className="grid grid-cols-1 lg:grid-cols-2 gap-2 my-3" onSubmit={handleSubmit}>
           <div className="flex flex-col  m-1">
-            <label htmlFor="entreprise" className="form-label">
-              entreprise:
+            <label htmlFor="entreprise" className="form-label capitalize text-slate-500 font-semibold"> 
+              entreprise
             </label>
             <input
               type="text"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="Entreprise"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-2 focus:border-orange-600 focus:outline-none"
               name="entreprise"
               id="entreprise"
               required
             />
           </div>
           <div className="m-1 flex flex-col">
-            <label htmlFor="status" className="form-label">
+            <label htmlFor="status" className="form-label capitalize text-slate-500 font-semibold">
               stage
             </label>
             <select
               name="status"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
+              className="form-control px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
             >
               {etape.map((e) => (
                 <option value={e} key={e}>
@@ -62,104 +61,96 @@ export default function AddOpportunity() {
             </select>
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="telephone" className="form-label">
-              telephone:
+            <label htmlFor="telephone" className="form-label capitalize text-slate-500 font-semibold">
+              telephone
             </label>
             <input
               type="number"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="telephone"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="telephone"
               id="telephone"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="email" className="form-label">
-              email:
+            <label htmlFor="email" className="form-label capitalize text-slate-500 font-semibold">
+              email
             </label>
             <input
               type="email"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="email"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="email"
               id="email"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="contact" className="form-label">
-              contact:
+            <label htmlFor="contact" className="form-label capitalize text-slate-500 font-semibold">
+              contact
             </label>
             <input
               type="text"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="contact"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="contact"
               id="contact"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="montant" className="form-label">
-              montant:
+            <label htmlFor="montant" className="form-label capitalize text-slate-500 font-semibold">
+              montant
             </label>
             <input
               type="number"
-              className="form-control w-65 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="montant"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="montant"
               id="montant"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="probability" className="form-label">
-              probability:
+            <label htmlFor="probability" className="form-label capitalize text-slate-500 font-semibold">
+              probability
             </label>
             <input
               type="number"
-              className="form-control w-65 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="probability"
+              className="form-control px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="probability"
               id="probability"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="endDate" className="form-label">
-              End Date:
+            <label htmlFor="endDate" className="form-label capitalize text-slate-500 font-semibold">
+              End Date
             </label>
             <input
               type="date"
-              className="form-control w-65 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="endDate"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding  focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="endDate"
               id="endDate"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="Source" className="form-label">
-              Source:
+            <label htmlFor="Source" className="form-label capitalize text-slate-500 font-semibold">
+              Source
             </label>
             <input
               type="text"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="Source"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="Source"
               id="Source"
               required
             />
           </div>
           <div className="flex flex-col m-1">
-            <label htmlFor="commerciale" className="form-label">
-              Commerciale :
+            <label htmlFor="commerciale" className="form-label capitalize text-slate-500 font-semibold ">
+              Commerciale 
             </label>
             <input
               type="text"
-              className="form-control w-100 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              placeholder="commerciale"
+              className="form-control  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding focus:border-2 border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               name="commerciale"
               id="commerciale"
             />

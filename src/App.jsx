@@ -19,7 +19,7 @@ function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    if (location.pathname === "/" || location.pathname === "/dashboard") {
+    if (location.pathname === "/" ) {
       setLoading(true);
 
       const timer = setTimeout(() => {
