@@ -24,14 +24,13 @@ function Draggable({ oppo }) {
       className="draggable border border-slate-200"
     >
       <span className="titleAndprice">
-        <h2>{oppo.entreprise}</h2>
+        <h2 className="capitalize font-semibold">{oppo.entreprise}</h2>
         <b className="montant">
-          <i>{oppo.montant?.toLocaleString?.() ?? oppo.montant} DH</i>
+          <i>{oppo.montant} DH</i>
         </b>
       </span>
       <div className="meta">
-        <span className="prob">{oppo.probabilite || "—"}</span>
-        <span className="commerciale">{oppo.commerciale || "—"}</span>
+        <span className="prob">{oppo.probabilite || "—"}%</span>
       </div>
       <div className="date">
         <p>
@@ -188,12 +187,12 @@ export default function Pipeline() {
   return (
     <div className="piplineContainer">
       <DndContext onDragEnd={handleDragEnd}>
-        <h1 className="pb-6">
+        <h1 className="pb-3">
           <span className="text-3xl font-extrabold text-gray-800 ">
-            📋 Pipeline Kanban
+             Pipeline Kanban
           </span>
         </h1>
-        <hr />
+        <hr   className="bg-slate-200 "/>
         <div className="columnWrapper">
           {etape.map((stage) => (
             <Column

@@ -1,15 +1,17 @@
-.piplineContainer{
+.piplineContainer {
     min-height: 100vh;
     padding: 20px;
     margin: 0 auto;
     background: var(--bg, transparent);
 }
-.piplineContainer h1{
+
+.piplineContainer h1 {
     font-size: 1.25rem;
     font-weight: 800;
     color: #0f172a;
 }
-.columnWrapper{
+
+.columnWrapper {
     margin-top: 18px;
     display: flex;
     gap: 14px;
@@ -17,91 +19,151 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
-.columnWrapper::-webkit-scrollbar{height:8px}
-.columnWrapper::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.08);border-radius:8px}
 
-.column{
+.columnWrapper::-webkit-scrollbar {
+    height: 8px
+}
+
+.columnWrapper::-webkit-scrollbar {
+    height: 8px
+}
+
+.columnWrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 8px
+}
+
+.column {
     min-width: 300px;
     max-width: 340px;
     padding: 12px;
     min-height: 420px;
     border-radius: 16px;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 6px 20px rgba(2,6,23,0.04);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.04);
 }
 
-.column h1{
+.column h1 {
     font-size: 1rem;
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 10px;
 }
 
-.column .columnInner{
+.column .columnInner {
     padding: 8px;
     border-radius: 12px;
-    background: rgba(245,245,245,0.6);
+    background: rgba(245, 245, 245, 0.6);
     min-height: 320px;
 }
 
-.draggable{
+.draggable {
     height: fit-content;
     border-radius: 12px;
     margin-top: 12px;
     padding: 14px;
     background-color: #ffffff;
-    box-shadow: 0 4px 14px rgba(2,6,23,0.06);
+    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.06);
     transition: transform .12s ease, box-shadow .12s ease;
-    cursor: grab;
 }
-.draggable:active{cursor:grabbing}
-.draggable:hover{transform: translateY(-4px); box-shadow: 0 10px 30px rgba(2,6,23,0.08)}
 
-.titleAndprice{
+.draggable:active {
+    cursor: grabbing
+}
+
+.draggable:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08)
+}
+
+.titleAndprice {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
 }
-.titleAndprice h2{font-size:1.05rem;margin:0;color:#0f172a}
-.montant{
+
+.titleAndprice h2 {
+    font-size: 1.05rem;
+    margin: 0;
+    color: #0f172a
+}
+
+.montant {
     font-size: .85rem;
     padding: 6px 8px;
     border-radius: 10px;
-    background-color: rgba(34,197,94,0.12);
-    color:#065f46;
-    font-weight:600;
+    background-color: rgba(34, 197, 94, 0.12);
+    color: #065f46;
+    font-weight: 600;
 }
 
-.meta{
-    margin-top:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:8px;
+.meta {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }
-.prob{
-    font-size:.8rem;
-    padding:4px 8px;
-    border-radius:999px;
-    background:rgba(59,130,246,0.08);
-    color:#1e3a8a;
-    font-weight:600;
-}
-.commerciale{font-size:.8rem;color:rgba(15,23,42,.7)}
 
-.date{
+.prob {
+    font-size: .8rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.commerciale {
+    font-size: .8rem;
+    color: rgba(15, 23, 42, .7)
+}
+
+.date {
     margin-top: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
 }
-.date p{display:flex;align-items:center;font-size:.78rem;opacity:.8;margin:0}
-.date p svg{width:16px;height:16px;margin-right:6px}
-.date small{display:flex;align-items:center;gap:6px;font-size:.7rem;opacity:.55}
 
-.contact{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
-.contact svg{width:18px;height:18px}
+.date p {
+    display: flex;
+    align-items: center;
+    font-size: .78rem;
+    opacity: .8;
+    margin: 0
+}
 
-.emptyState{padding:36px;text-align:center;color:rgba(15,23,42,.6)}
+.date p svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px
+}
+
+.date small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .7rem;
+    opacity: .55
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px
+}
+
+.contact svg {
+    width: 18px;
+    height: 18px
+}
+
+.emptyState {
+    padding: 36px;
+    text-align: center;
+    color: rgba(15, 23, 42, .6)
+}
