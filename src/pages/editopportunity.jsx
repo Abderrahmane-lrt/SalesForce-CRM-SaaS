@@ -16,6 +16,7 @@ export default function EditOpportunity() {
     status: "prospection",
     telephone: "",
     email: "",
+    contact : "",
     montant: "",
     probability: "",
     endDate: "",
@@ -31,6 +32,7 @@ export default function EditOpportunity() {
           status: opp.status || "prospection",
           telephone: opp.telephone ,
           email: opp.email ,
+          contact : opp.contact,
           montant: opp.montant ,
           probability: opp.probabilite ,
           endDate: opp.date ? new Date(opp.date).toISOString().slice(0, 10) : "",
@@ -120,6 +122,15 @@ export default function EditOpportunity() {
         <input
           name="email"
           value={form.email}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-400 focus:outline-none"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-600 font-semibold mb-1">Contact</label>
+        <input
+          name="contact"
+          value={form.contact}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-400 focus:outline-none"
         />

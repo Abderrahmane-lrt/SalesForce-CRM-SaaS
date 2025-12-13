@@ -73,7 +73,7 @@ const OportinitySlice = createSlice({
         },
         changeStatus: (state, action) => {
             return state.map((oppo) =>
-                oppo.entreprise == action.payload.oppId ? { ...oppo, status: action.payload.newStatus } : oppo
+                oppo.id == action.payload.oppId ? { ...oppo, status: action.payload.newStatus } : oppo
                 )
         },
         editOpprtinity: (state, action) => {

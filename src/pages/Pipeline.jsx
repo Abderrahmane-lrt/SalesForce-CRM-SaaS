@@ -9,7 +9,7 @@ dayjs.extend(relativeTime);
 
 function Draggable({ oppo }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: oppo.entreprise,
+    id: oppo.id,
   });
   const dragStyle = {
     cursor: "move",
@@ -157,7 +157,7 @@ function Column({ opportinities, etape }) {
       <h1 style={{ color: colorByStage[etape] }}>{etape}</h1>
       <div className="columnInner" ref={setNodeRef}>
         {opportinities.map((op) => (
-          <Draggable key={op.entreprise} oppo={op} />
+          <Draggable key={op.id} oppo={op} />
         ))}
       </div>
     </div>
@@ -178,7 +178,9 @@ export default function Pipeline() {
   const handleDragEnd = (event) => {
     const { over, active } = event;
     const oppId = active.id;
+    console.log(oppId);
     const newStatus = over?.id;
+    console.log(newStatus);
     if (over) {
       dispatch(changeStatus({ oppId, newStatus }));
     } else return;
