@@ -57,8 +57,10 @@ const Dashboard = () => {
       .filter((opp) => opp.status === 'gagne')
       .reduce((sum, opp) => sum + Number(opp.montant || 0), 0);
   };
-
-  
+  const ConversionRate = ()=>{
+    const total = opportunities.filter((opp) => opp.status === 'gagne').length;
+    return ((total/opportunities.length)*100).toFixed(2)
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -78,7 +80,7 @@ const Dashboard = () => {
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
               Total Opportunities
             </h3>
-            <p className="text-3xl font-bold text-orange-500">
+            <p className="text-3xl font-bold text-orange-500 pt-3">
               {opportunities.length} 
             </p>
           </div>
@@ -86,14 +88,27 @@ const Dashboard = () => {
             <h3 className="text-lg font-semibold capitalize text-gray-700 mb-2">
               Conversion Rate
             </h3>
-
+            {/* here */}
+            <div style={{
+              display:"flex",
+              justifyContent:'center',
+              alignItems : 'center',
+              width:80,
+              height:80,
+              padding:20,
+              borderRadius:'50%',
+              border:'4px solid orange',
+              marginLeft : '8px' ,
+            }}>
+              {ConversionRate()}% 
+            </div>
             
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
               Outcome
             </h3>
-            <p className="text-3xl font-bold text-black">{TotalRevenu()} DH</p>
+            <p className="text-3xl font-bold text-black pt-3">{TotalRevenu()} DH</p>
           </div>
         </div>
         <div className="my-8 bg-white rounded-lg shadow-md p-6">
@@ -170,7 +185,6 @@ const Dashboard = () => {
               <XAxis dataKey="date" />
               <YAxis allowDecimals={false} />
               <Tooltip />
-
               <Line
                 type="monotone"
                 dataKey="count"
