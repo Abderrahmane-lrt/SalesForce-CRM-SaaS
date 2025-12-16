@@ -181,7 +181,7 @@ const HomePage = () => {
         <h2 className=" text-2xl text-white font-extrabold text-center pt-20 pb-5">
           Easy and convenient
         </h2>
-        <img src={homeImage} alt="preview image" />
+        <img src={homeImage} alt="preview image" className="h-screen m-auto" />
       </section>
       {/* Pricing Plan  */}
       <section id="pricing">
