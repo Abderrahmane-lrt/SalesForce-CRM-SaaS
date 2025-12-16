@@ -7,7 +7,7 @@ import tasksIcon from "../assets/icons/tasks.png";
 import calendarIcon from "../assets/icons/calendar.png";
 import assignIcon from "../assets/icons/assign.png";
 import contactsIcon from "../assets/icons/contacts.png";
-import homeImage from "../assets/home.png"
+import homeImage from "../assets/Macbook-Air-sales-force-maroc-crm.vercel.app (1).png"
 import price1 from "../assets/pricing/price1.png";
 import price2 from "../assets/pricing/price2.png";
 import price3 from "../assets/pricing/price3.png";
