@@ -111,6 +111,14 @@ const OpportunityDetails = () => {
                     {opportunity.probabilite}%
                   </h1>
                 </div>
+                <div>
+                  <span className="text-slate-600 font-normal ">
+                    Montant Pondere
+                  </span>
+                  <h1 className="text-2xl font-extrabold text-cyan-500 py-2">
+                    {opportunity.montantPondere} DH
+                  </h1>
+                </div>
               </div>
             </div>
             <div className="shadow-md p-4 ps-4 border-2 border-gray-100 rounded-md">
