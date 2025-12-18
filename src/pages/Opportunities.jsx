@@ -21,7 +21,7 @@ const Opportunities = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-5">
           <h1 className="text-3xl font-extrabold text-gray-800">
              Opportunities
           </h1>
