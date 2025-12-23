@@ -24,6 +24,10 @@ export default function AddOpportunity() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
+    if (!data.entreprise.trim() || !data.telephone.trim() || !data.email || !data.montant || !data.probability || !data.endDate || !data.Source.trim()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
     const finaldata = {
       ...data,
       montantPondere: Math.round(data.montant * (data.probability / 100)),

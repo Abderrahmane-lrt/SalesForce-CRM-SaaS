@@ -61,7 +61,7 @@ export default function EditOpportunity() {
   function handleSubmit(e) {
     e.preventDefault();
     
-    if (!form.entreprise || !form.telephone || !form.email || !form.montant || !form.probability || !form.endDate || !form.Source) {
+    if (!form.entreprise.trim() || !form.telephone.trim() || !form.email || !form.montant || !form.probability || !form.endDate || !form.Source.trim()) {
       toast.error('Please fill in all required fields');
       return;
     }
