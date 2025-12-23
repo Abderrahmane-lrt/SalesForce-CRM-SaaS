@@ -187,7 +187,7 @@ export default function AddOpportunity() {
             </button>
           </div>
           <div className="mt-7 " >
-            <p style={{fontSize:"1.2rem",fontWeight:'500'}}>montant Pondere : <b>{montantPondere} DH</b></p>
+            <p style={{fontSize:"1.2rem",fontWeight:'500'}}>montant Pondere : <b>{Math.abs(montantPondere)} DH</b></p>
           </div>
         </form>
       </div>
