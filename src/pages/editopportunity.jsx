@@ -65,6 +65,10 @@ export default function EditOpportunity() {
       toast.error('Please fill in all required fields');
       return;
     }
+    if (form.montant < 0 || form.probability < 0){
+      toast.error('montant and probability must be positive numbers')
+      return
+    }
     
     const payload = { id: Number(id), ...form };
     dispatch(editOpprtinity(payload));
