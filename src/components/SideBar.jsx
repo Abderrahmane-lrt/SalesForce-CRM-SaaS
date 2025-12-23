@@ -23,7 +23,11 @@ const Sidebar = ({ isOpen, onToggle }) => {
         isOpen ? "w-64 p-6" : "w-0 p-0 overflow-hidden"
       }`}
     >
-      <div className={`flex items-center gap-3 pb-4 ${!isOpen ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}>
+      <div
+        className={`flex items-center gap-3 pb-4 ${
+          !isOpen ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
+      >
         <img
           src={logo}
           alt="Logo"
@@ -31,10 +35,16 @@ const Sidebar = ({ isOpen, onToggle }) => {
           height={40}
           className="rounded-md"
         />
-        {isOpen && <span className="text-lg font-bold text-white">SalesForce CRM</span>}
+        {isOpen && (
+          <span className="text-lg font-bold text-white">SalesForce CRM</span>
+        )}
       </div>
 
-      <nav className={`flex flex-col gap-4 flex-1 border-t border-gray-700 pt-4 ${!isOpen ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}>
+      <nav
+        className={`flex flex-col gap-4 flex-1 border-t border-gray-700 pt-4 ${
+          !isOpen ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
+      >
         <NavLink
           to="/dashboard"
           className={({ isActive }) =>
@@ -51,7 +61,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
           }}
         >
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined">dashboard</span>
+            <span class="material-symbols-outlined">speed</span>
             {isOpen && <span>Dashboard</span>}
           </div>
         </NavLink>
@@ -71,7 +81,9 @@ const Sidebar = ({ isOpen, onToggle }) => {
           }}
         >
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined">format_list_bulleted</span>
+            <span className="material-symbols-outlined">
+              format_list_bulleted
+            </span>
             {isOpen && <span>Pipeline</span>}
           </div>
         </NavLink>
@@ -97,7 +109,11 @@ const Sidebar = ({ isOpen, onToggle }) => {
         </NavLink>
       </nav>
 
-      <div className={`mt-auto pt-4 border-t border-gray-700 ${!isOpen ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}>
+      <div
+        className={`mt-auto pt-4 border-t border-gray-700 ${
+          !isOpen ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
+      >
         <button
           onClick={handleLogout}
           className="w-full py-2 font-bold cursor-pointer rounded-sm px-4 hover:bg-red-600 transition-colors text-gray-300"
